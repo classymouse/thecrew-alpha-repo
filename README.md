@@ -5,7 +5,7 @@ This is the alpha testing repository for The Crew Kodi addons.
 ## 📦 What's Included
 
 - **script.module.thecrew v2.2.0-alpha** - Core module with alpha fixes
-- **plugin.video.thecrew v2.1.0** - Main video addon  
+- **plugin.video.thecrew v2.1.0** - Main video addon
 - **script.thecrew.artwork v2.1.0** - Artwork and UI module
 - **repository.thecrew.alpha** - Repository installer
 
@@ -16,7 +16,7 @@ This is the alpha testing repository for The Crew Kodi addons.
 - **83% fewer progress dialog updates** - Batched scraping progress updates from every 0.5s to every 2.5s
 - **Optimized list rendering** - Fixed metadata validation and property setting
 
-### New Features  
+### New Features
 - **Viperscrapers integration** - 13 new torrent scrapers (aiostreams, comet, kickass2, mediafusion, nyaa, piratebay, rutor, torrentdownload, torrentgalaxy, torrentio, torrentsdb, torz, zilean)
 - **Library auto-updates** - Detects new seasons for continuing shows every 7 days
 - **Progress context** - Shows "X/Y scrapers complete" during searches
@@ -124,7 +124,7 @@ Please test these specific improvements:
 - [ ] Browse TV show episodes - should load significantly faster
 - [ ] Navigate through multiple seasons - check reduced API calls in log
 
-### UI/UX (Phase 1E)  
+### UI/UX (Phase 1E)
 - [ ] Start a movie/episode search
 - [ ] Check progress dialog updates smoothly (not spammy)
 - [ ] Verify "X/Y complete" counter shows
@@ -152,7 +152,7 @@ Report alpha issues to:
 
 Include:
 - Kodi version
-- Operating system  
+- Operating system
 - Steps to reproduce
 - Kodi.log excerpt (Debug logging enabled)
 

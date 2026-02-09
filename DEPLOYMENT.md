@@ -9,7 +9,7 @@ C:\Users\fvanb\AppData\Roaming\Kodi\addons\thecrew-alpha-repo\
 
 Contains:
 - ✅ **script.module.thecrew v2.2.0** (with all 5 alpha fixes)
-- ✅ **plugin.video.thecrew v2.1.0** 
+- ✅ **plugin.video.thecrew v2.1.0**
 - ✅ **script.thecrew.artwork v2.1.0**
 - ✅ **repository.thecrew.alpha v1.0.0** (installer for Kodi)
 - ✅ **addons.xml** and **addons.xml.md5** (repository catalog)
@@ -37,7 +37,7 @@ Contains:
    Drag and drop from `thecrew-alpha-repo/` to the release:
    ```
    addons.xml
-   addons.xml.md5  
+   addons.xml.md5
    script.module.thecrew/script.module.thecrew-2.2.0.zip
    plugin.video.thecrew/plugin.video.thecrew-2.1.0.zip
    script.thecrew.artwork/script.thecrew.artwork-2.1.0.zip
@@ -125,7 +125,7 @@ Contains:
 - Browse through episodes
 - **Expected:** Much faster loading, smoother navigation
 
-### 2. Viperscrapers (Phase 1C)  
+### 2. Viperscrapers (Phase 1C)
 - Search for a popular movie (e.g., "Deadpool")
 - Check source list
 - **Expected:** See [Viper] sources (13 new scrapers)
@@ -161,7 +161,7 @@ GitHub Issues: https://github.com/classymouse/script.module.thecrew/issues
 All fixes on `release/alpha-2.2.0` branch:
 ```
 a6c3019 fix: improve list item rendering and metadata handling
-2d00270 feat: add season tracking for library continuing shows  
+2d00270 feat: add season tracking for library continuing shows
 cb0c981 perf: optimize BGDialog progress updates during scraping
 f35f555 feat: integrate viperscrapers external scraper pack
 e558e1a perf(episodes): add show-level caching to eliminate repeated API calls
@@ -195,7 +195,7 @@ Once alpha testing confirms stability (1-2 weeks):
 **Issue:** Dependencies fail to install
 - **Fix:** Install manually in order: script.module.thecrew → script.thecrew.artwork → plugin.video.thecrew
 
-**Issue:** "Failed to install from repository"  
+**Issue:** "Failed to install from repository"
 - **Fix:** Check repository URLs are accessible (test in browser)
 - Verify GitHub Pages is enabled (Option 2)
 - Or verify release files are uploaded (Option 1)
