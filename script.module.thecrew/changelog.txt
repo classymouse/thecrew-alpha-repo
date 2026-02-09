@@ -1,0 +1,97 @@
+[COLOR orchid][B]version 2.1.0[/B][/COLOR]
+
+[COLOR teal]Info[/COLOR]: This is a [B]major release[/B] where a lot of things have been changed and it's almost a complete rewrite of the addon. While it has been tested on a lot of different systems, bugs on some devices/systems may occur. Please let us know.
+
+[COLOR red]Warning[/COLOR]: As of his version The crew will only (!) supports Python 3.8 and higher which means, for now, kodi v20 and above. [B]Unexpected results WILL happen when using on v19[/B].
+
+[COLOR green]Added[/COLOR]: total episodes/seasons and watched/unwatched episodes where available (if your skin supports it!)
+[COLOR green]Added[/COLOR]: widgets don't show unaired episodes in progress list anymore. In normal listings they are colored based on your settings
+[COLOR green]Added[/COLOR]: holiday/christmas movies menu item will be shown automagically in December
+[COLOR green]Added[/COLOR]: * Now Watching * menu in movies and tvshows
+[COLOR green]Added[/COLOR]: search items can be deleted per item inside dialog (hold button or right-click)
+[COLOR green]Added[/COLOR]: progress time remaining in title when movie or episode is paused
+[COLOR green]Added[/COLOR]: progress synced with trakt
+[COLOR green]Added[/COLOR]: Extensive Orion support (see https://www.orionoid.com for info)
+[COLOR green]Added[/COLOR]: CocoScrapers integration with user-configurable enable/disable setting
+[COLOR green]Added[/COLOR]: season pack and show pack support for 14 torrent scrapers (1337x, BitLord, EZTV, GloTorrents, IsoHunt2, KickAss2, LimeTorrents, MagnetDL, PirateBay, TorDL, TorrentDownloads, TorrentGalaxy, TorrentQuest, YourBittorrent)
+[COLOR green]Added[/COLOR]: centralized HTTP client with connection pooling (20 connections) and automatic retry logic (3 attempts with exponential backoff)
+[COLOR green]Added[/COLOR]: intelligent cache TTLs - 6 hours for airing shows, 30 days for ended shows
+[COLOR green]Added[/COLOR]: Trakt batch operations with conditional requests (If-Modified-Since and ETag headers)
+[COLOR green]Added[/COLOR]: Unified key/value cache with ETag and Last-Modified support and a `get_with_etag` helper for conditional revalidation
+[COLOR green]Added[/COLOR]: Integrated ETag/conditional revalidation into Trakt last-activities (60s TTL) to reduce redundant API calls
+[COLOR green]Added[/COLOR]: Database migration `cache_v2` to add `namespace`, `etag`, and `last_modified` columns and migrate legacy `table` values
+[COLOR green]Added[/COLOR]: tests for cache migration and ETag/304/200 flows and Trakt integration; docs added (`CACHE_ETAG.md`, `MIGRATIONS.md`)
+[COLOR green]Added[/COLOR]: tools/check_cache_db.py for quick inspection of cache DB rows and migration status
+[COLOR green]Added[/COLOR]: proactive Trakt token refresh when < 1 hour remains (handles new 1-day token expiration policy)
+[COLOR green]Added[/COLOR]: TMDb append_to_response optimization reducing API calls by 50%
+[COLOR green]Added[/COLOR]: Trakt scrobble queue system - batches playback events every 5 minutes to reduce API spam (90% fewer API calls)
+[COLOR green]Added[/COLOR]: immediate queue processing on playback stop to ensure resume time is saved instantly
+[COLOR green]Added[/COLOR]: source caching system with configurable duration (5-60 min, default 15) - instant source retrieval on revisit
+[COLOR green]Added[/COLOR]: remaining time display for episodes in lists (matches movie behavior)
+
+[COLOR orange]Fixed[/COLOR]: trailers playing again
+[COLOR orange]Fixed[/COLOR]: major core code changes py2 to 3. Will [B]not[/B] work on a python 2 version
+[COLOR orange]Fixed[/COLOR]: countless bugs in code due to py 3
+[COLOR orange]Fixed[/COLOR]: fanart size quality now works in info screens and all other widgetsd etc. (you might want to clear your cache)
+[COLOR orange]Fixed[/COLOR]: Continue Watching now shows all episodes with progress instead of only first 7
+[COLOR orange]Fixed[/COLOR]: Episode labels now display clean format (Show - (S##E##) - Episode Title) without duplication
+[COLOR orange]Fixed[/COLOR]: UnboundLocalError crash when episodes have resume_point from progress table
+[COLOR orange]Fixed[/COLOR]: selecting an actor with the tmdb addon installed is fixed
+[COLOR orange]Fixed[/COLOR]: all references to "next", so all nextpages are working again properly
+[COLOR orange]Fixed[/COLOR]: several indicators (e.g. progress indicators movies)
+[COLOR orange]Fixed[/COLOR]: countless errors and created numerous new defs to fix old code
+[COLOR orange]Fixed[/COLOR]: reading of the trakt/local bookmarks setting in Settings
+[COLOR orange]Fixed[/COLOR]: a lot of regex strings to string literals (raw) to prevent deprecation warnings
+[COLOR orange]Fixed[/COLOR]: Manually setting watched/unwatched status in trakt via context menu
+[COLOR orange]Fixed[/COLOR]: sync Trakt with start/stop/resume in player
+[COLOR orange]Fixed[/COLOR]: size/filetypes/fileinfo and added the Dolby Vision (DV) tag as seperate
+[COLOR orange]Fixed[/COLOR]: issue with trakt authentication on some systems
+[COLOR orange]Fixed[/COLOR]: issue with trakt syncing on some systems
+[COLOR orange]Fixed[/COLOR]: info screen missing data (e.g. genres, release date etc.)
+[COLOR orange]Fixed[/COLOR]: info contextual menu on tv-shows not working properly
+[COLOR orange]Fixed[/COLOR]: security vulnerability - replaced eval() with json.loads() in cache deserialization
+[COLOR orange]Fixed[/COLOR]: Trakt OAuth token refresh now uses correct headers (no Authorization header during refresh)
+[COLOR orange]Fixed[/COLOR]: endless loop when stopping movie playback - removed Container.Refresh on manual stop
+[COLOR orange]Fixed[/COLOR]: Trakt 401 error infinite loop - token_refresh now returns boolean and prevents recursive calls
+[COLOR orange]Fixed[/COLOR]: 304 (Not Modified) handling no longer refreshes cached timestamp so servers can be revalidated by TTL
+[COLOR orange]Fixed[/COLOR]: NameError in ETag conditional path resolved (incorrect reference to `cache.cache_insert` fixed)
+[COLOR orange]Fixed[/COLOR]: CREATE TABLE and migration paths made idempotent and benign "already exists" OperationalError suppressed to avoid noisy startup logs
+[COLOR orange]Fixed[/COLOR]: source selection dialog showing empty labels - fixed broken filter logic in sources.py
+[COLOR orange]Fixed[/COLOR]: external lists "Unknown Video Info Key" errors - corrected metadata filtering order in lists.py
+[COLOR orange]Fixed[/COLOR]: sublink selection dialog showing blank lines - added default "Link N" labels for unnamed sublinks
+[COLOR orange]Fixed[/COLOR]: resume time not being saved correctly when user stops playback manually
+[COLOR orange]Fixed[/COLOR]: excessive Trakt API calls on every pause/resume/stop event
+[COLOR orange]Fixed[/COLOR]: resume point corruption - percentage values incorrectly stored as seconds in database
+[COLOR orange]Fixed[/COLOR]: remaining time calculation showing wrong values (e.g., "1 min" instead of "60 min")
+[COLOR orange]Fixed[/COLOR]: movie and episode resume points now correctly converted from corrupted percentage data
+[COLOR orange]Fixed[/COLOR]: episode resume points not retrieved properly - missing season/episode parameters
+[COLOR orange]Fixed[/COLOR]: duplicate database updates from scrobble functions overwriting correct resume times
+[COLOR orange]Fixed[/COLOR]: Continue Watching for TV Shows showing wrong/missing episodes - fill_progress_table now fetches both movies AND episodes from Trakt
+[COLOR orange]Fixed[/COLOR]: episodes with <92% progress showing checkmark instead of resume arrow - overlay logic now checks progress table first
+[COLOR orange]Fixed[/COLOR]: AttributeError when adding movies/TV shows to library - corrected router to use libmovies, libtvshows, and libepisodes as classes instead of methods
+
+[COLOR cyan]Changed[/COLOR]: several (missing) language strings
+[COLOR cyan]Changed[/COLOR]: trailers: 1 result plays automatically, multiple results can be selected by the user from a dialog
+[COLOR cyan]Changed[/COLOR]: changed startup dialogs -> silent boot is now really silent (will log when debug is enabled)
+[COLOR cyan]Changed[/COLOR]: changed tvshows/seasons/episodes/movies etc. to use the new Listitems
+[COLOR cyan]Changed[/COLOR]: artwork (e.g. clearlogo, clearart and a new thumbnail for TVShows)
+[COLOR cyan]Changed[/COLOR]: local bookmarks significally, it is possible you will lose some progress if you are not using trakt
+[COLOR cyan]Changed[/COLOR]: workings of local and trakt bookmarks. If you choose "local" bookmarks your progress stays local to the device, if you choose "[COLOR red][B]Trakt[/B][/COLOR]" your progress will be updated with Trakt and you can continue watching on another device
+[COLOR cyan]Changed[/COLOR]: TMDb API calls now use append_to_response to fetch credits, external_ids, and ratings in single request
+[COLOR cyan]Changed[/COLOR]: Trakt API now uses batch /sync/watched endpoint instead of per-type loops
+[COLOR cyan]Changed[/COLOR]: HTTP sessions now persist across requests with connection pooling and rate limiting
+[COLOR cyan]Changed[/COLOR]: all scrapers now use centralized HTTPClient with shared connection pool
+[COLOR cyan]Changed[/COLOR]: Trakt HTTP helpers updated to accept conditional headers and return (text, headers, status); last-activities now use `get_with_etag` with a 60s TTL for conditional revalidation
+[COLOR cyan]Changed[/COLOR]: cache table schema migrated: legacy `table` column values are copied to new `namespace` column; schema_migrations records `cache_v2` idempotently
+[COLOR cyan]Changed[/COLOR]: scrapers and pack implementations updated and documented (CocoScrapers / PACK docs) with tests for pack behavior and caching integration
+[COLOR cyan]Changed[/COLOR]: Trakt scrobbling now queues events and processes in 5-minute batches instead of immediate API calls
+
+[COLOR orchid]Extra[/COLOR]: Bumped version to 2.1.0/module to 2.2.0
+[COLOR orchid]Extra[/COLOR]: created comprehensive documentation (API_MODERNIZATION_SUMMARY.md, COCOSCRAPERS_INTEGRATION.md, PACK_IMPLEMENTATION_COMPLETE.md, SCROBBLE_QUEUE_IMPLEMENTATION.md)
+
+[COLOR red]Removed[/COLOR]: a lot of startup code
+[COLOR red]Removed[/COLOR]: a lot of obsolete
+[COLOR red]Removed[/COLOR]: removed Kodi-six
+[COLOR red]Removed[/COLOR]: removed support for Furk.net
+[COLOR red]Removed[/COLOR]: removed eval() from cache system (security risk)
+[COLOR red]Removed[/COLOR]: removed redundant TMDb external_ids API calls (now included via append_to_response)
