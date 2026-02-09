@@ -69,12 +69,12 @@
       </assets>
     </extension>
   </addon>
-  <addon id="repository.thecrew.alpha" name="The Crew Alpha Repository" version="1.0.1" provider-name="The Crew">
+  <addon id="repository.thecrew.alpha" name="The Crew Alpha Repository" version="1.0.2" provider-name="The Crew">
     <extension point="xbmc.addon.repository" name="The Crew Alpha Repository">
       <dir>
-        <info compressed="false">https://raw.githubusercontent.com/classymouse/thecrew-alpha-repo/main/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/classymouse/thecrew-alpha-repo/main/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/classymouse/thecrew-alpha-repo/main/</datadir>
+        <info compressed="false">https://classymouse.github.io/addons.xml</info>
+        <checksum>https://classymouse.github.io/addons.xml.md5</checksum>
+        <datadir zip="true">https://classymouse.github.io/</datadir>
       </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -83,13 +83,13 @@
       <disclaimer lang="en">This repository contains ALPHA software. Use at your own risk. Backup your Kodi databases before installing.</disclaimer>
       <platform>all</platform>
       <license>GNU GENERAL PUBLIC LICENSE Version 3</license>
-      <website>https://github.com/classymouse/thecrew-alpha-repo</website>
+      <website>https://classymouse.github.io/</website>
       <source>https://github.com/classymouse/script.module.thecrew/tree/release/alpha-2.2.0</source>
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
       </assets>
-      <news>v1.0.1 (Feb 2026) - Fixed repository URLs, rebuilt with all alpha fixes</news>
+      <news>v1.0.2 (Feb 2026) - Migrated to GitHub Pages hosting at classymouse.github.io</news>
     </extension>
   </addon>
 </addons>

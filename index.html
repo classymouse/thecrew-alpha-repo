@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Crew Alpha Repository</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #764ba2;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            color: #666;
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        .alert {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        
+        .alert h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .alert p {
+            color: #856404;
+            line-height: 1.6;
+        }
+        
+        .features {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .features h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .features li {
+            padding: 8px 0;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .features li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .install-section {
+            background: #e7f3ff;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .install-section h2 {
+            color: #0066cc;
+            margin-bottom: 15px;
+        }
+        
+        .install-url {
+            background: white;
+            border: 2px solid #0066cc;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            word-break: break-all;
+            margin: 15px 0;
+            color: #0066cc;
+        }
+        
+        .button {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            text-align: center;
+        }
+        
+        .button:hover {
+            background: #667eea;
+        }
+        
+        .steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .steps li {
+            counter-increment: step-counter;
+            margin-bottom: 15px;
+            padding-left: 40px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .steps li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #764ba2;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #666;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .footer a {
+            color: #764ba2;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>🎬 The Crew</h1>
+            <div class="subtitle">Alpha Testing Repository</div>
+        </div>
+        
+        <div class="alert">
+            <h3>⚠️ Alpha Testing Software</h3>
+            <p>This repository contains pre-release alpha versions of The Crew addons. These are for testing purposes only and may contain bugs. <strong>Backup your Kodi databases before installing.</strong></p>
+        </div>
+        
+        <div class="features">
+            <h2>What's New in v2.2.0-alpha</h2>
+            <ul>
+                <li><strong>50-70% faster episode browsing</strong> - Show-level caching eliminates redundant API calls</li>
+                <li><strong>13 new Viperscrapers torrent sources</strong> - Expanded scraping capabilities</li>
+                <li><strong>Library auto-updates</strong> - Detects new seasons for continuing shows</li>
+                <li><strong>Optimized scraping UI</strong> - 83% fewer progress dialog updates</li>
+                <li><strong>Metadata rendering fixes</strong> - Improved list stability</li>
+                <li><strong>Bug fixes</strong> - IndentationError and watched-count fixes</li>
+            </ul>
+        </div>
+        
+        <div class="install-section">
+            <h2>📥 Installation Instructions</h2>
+            
+            <ol class="steps">
+                <li>Download the repository installer:
+                    <div class="install-url">
+                        https://classymouse.github.io/repository.thecrew.alpha/repository.thecrew.alpha-1.0.2.zip
+                    </div>
+                    <a href="repository.thecrew.alpha/repository.thecrew.alpha-1.0.2.zip" class="button" download>
+                        Download Repository Installer
+                    </a>
+                </li>
+                
+                <li>In Kodi, go to: <strong>Settings → Add-ons → Install from zip file</strong></li>
+                
+                <li>Navigate to the downloaded file and install <code>repository.thecrew.alpha-1.0.2.zip</code></li>
+                
+                <li>Wait for the "The Crew Alpha Repository Add-on installed" notification</li>
+                
+                <li>Go to: <strong>Settings → Add-ons → Install from repository → The Crew Alpha Repository</strong></li>
+                
+                <li>Install the addons you want to test</li>
+            </ol>
+        </div>
+        
+        <div class="footer">
+            <p>
+                <strong>The Crew</strong> - Many come, Many go. The true and dedicated are here.<br>
+                <a href="https://github.com/classymouse/script.module.thecrew" target="_blank">GitHub</a> | 
+                Version 2.2.0-alpha | 
+                February 2026
+            </p>
+        </div>
+    </div>
+</body>
+</html>
