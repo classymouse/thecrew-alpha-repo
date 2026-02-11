@@ -1,48 +1,6 @@
-[COLOR orchid][B]version 2.2.0[/B][/COLOR] - Alpha Release
+[COLOR orchid][B]version 2.2.0-alpha[/B][/COLOR]
 
-[COLOR teal]Info[/COLOR]: This is an [B]alpha release[/B] with major improvements to scraping, caching, and debrid account management. All critical bugs have been fixed and the addon is ready for testing.
-
-[COLOR green]Added[/COLOR]: Debrid Account Manager - centralized interface to view Real-Debrid, AllDebrid, and Premiumize account information
-[COLOR green]Added[/COLOR]: account status display with color-coded indicators (green=active, red=inactive)
-[COLOR green]Added[/COLOR]: readable expiration dates with days remaining countdown
-[COLOR green]Added[/COLOR]: color-coded expiration warnings (green >30 days, yellow 8-30 days, red ≤7 days)
-[COLOR green]Added[/COLOR]: back button navigation in all debrid manager screens for improved UX
-[COLOR green]Added[/COLOR]: Viperscrapers integration with 13 additional torrent sources (Torrent9, Torrentio, YggTorrent, Sharewood, etc.)
-[COLOR green]Added[/COLOR]: Gearsscrapers compatibility and integration
-[COLOR green]Added[/COLOR]: extensive logging for debrid account detection and API integration
-[COLOR green]Added[/COLOR]: Unix timestamp to readable date conversion (YYYY-MM-DD HH:MM UTC format)
-[COLOR green]Added[/COLOR]: cloud storage browser menu placeholder (future implementation)
-
-[COLOR orange]Fixed[/COLOR]: critical scraping bug - ValueError "not enough values to unpack (expected 3, got 2)" that caused 100% scraping failure
-[COLOR orange]Fixed[/COLOR]: source tuple priority stripping that broke all 44 scrapers
-[COLOR orange]Fixed[/COLOR]: IndentationError in episodes.py line 498 (_fetch_tmdb_data method)
-[COLOR orange]Fixed[/COLOR]: Dialog().ok() calls to use 2 arguments for Kodi Python 3 compatibility
-[COLOR orange]Fixed[/COLOR]: TypeError in debrid manager preventing feature from loading
-[COLOR orange]Fixed[/COLOR]: debrid account detection - improved resolver instantiation and auth token retrieval
-[COLOR orange]Fixed[/COLOR]: UTF-8 special character encoding issues (removed checkmarks and arrows)
-[COLOR orange]Fixed[/COLOR]: debrid manager now properly checks for multiple auth token setting names
-
-[COLOR cyan]Changed[/COLOR]: superinfo caching optimized for 50-70% faster metadata retrieval
-[COLOR cyan]Changed[/COLOR]: BGDialog source update frequency reduced by 83% (updates every 6th source instead of every source)
-[COLOR cyan]Changed[/COLOR]: library season tracking improved to prevent duplicate episodes
-[COLOR cyan]Changed[/COLOR]: list rendering order corrected (alphabetical → chronological where appropriate)
-[COLOR cyan]Changed[/COLOR]: debrid manager uses select() dialogs instead of textviewer() for better navigation
-[COLOR cyan]Changed[/COLOR]: color scheme standardized across addon (green=safe, yellow=warn, red=danger, skyblue=names)
-[COLOR cyan]Changed[/COLOR]: back button uses << instead of UTF-8 arrow character
-
-[COLOR orchid]Extra[/COLOR]: Alpha repository created and deployed to GitHub (thecrew-alpha-repo)
-[COLOR orchid]Extra[/COLOR]: Repository generator tool (build_repo.py) for automated packaging
-[COLOR orchid]Extra[/COLOR]: Documentation: PACK_IMPLEMENTATION_COMPLETE.md, API_MODERNIZATION_SUMMARY.md, COCOSCRAPERS_INTEGRATION.md
-
-[COLOR red]Removed[/COLOR]: 51 backup files and .bak files from codebase (alpha cleanup phase)
-[COLOR red]Removed[/COLOR]: test compatibility code that was breaking production scraping
-[COLOR red]Removed[/COLOR]: UTF-8 special characters (●, ←) that displayed incorrectly in Kodi
-
----
-
-[COLOR orchid][B]version 2.1.0[/B][/COLOR]
-
-[COLOR teal]Info[/COLOR]: This is a [B]major release[/B] where a lot of things have been changed and it's almost a complete rewrite of the addon. While it has been tested on a lot of different systems, bugs on some devices/systems may occur. Please let us know.
+[COLOR teal]Info[/COLOR]: This is a [B]major alpha release[/B] representing a nearly complete rewrite with extensive improvements to scraping, caching, debrid management, and Trakt integration. All critical bugs have been resolved and the addon is ready for community testing.
 
 [COLOR red]Warning[/COLOR]: As of his version The crew will only (!) supports Python 3.8 and higher which means, for now, kodi v20 and above. [B]Unexpected results WILL happen when using on v19[/B].
 
@@ -70,6 +28,22 @@
 [COLOR green]Added[/COLOR]: immediate queue processing on playback stop to ensure resume time is saved instantly
 [COLOR green]Added[/COLOR]: source caching system with configurable duration (5-60 min, default 15) - instant source retrieval on revisit
 [COLOR green]Added[/COLOR]: remaining time display for episodes in lists (matches movie behavior)
+[COLOR green]Added[/COLOR]: Debrid Account Manager - centralized interface to view Real-Debrid, AllDebrid, and Premiumize account information
+[COLOR green]Added[/COLOR]: account status display with color-coded indicators (green=active, red=inactive)
+[COLOR green]Added[/COLOR]: readable expiration dates with days remaining countdown
+[COLOR green]Added[/COLOR]: color-coded expiration warnings (green >30 days, yellow 8-30 days, red ≤7 days)
+[COLOR green]Added[/COLOR]: back button navigation in all debrid manager screens for improved UX
+[COLOR green]Added[/COLOR]: extensive logging for debrid account detection and API integration
+[COLOR green]Added[/COLOR]: Unix timestamp to readable date conversion (YYYY-MM-DD HH:MM UTC format)
+[COLOR green]Added[/COLOR]: cloud storage browser menu placeholder (future implementation)
+[COLOR green]Added[/COLOR]: Viperscrapers integration with 13 additional torrent sources (Torrent9, Torrentio, YggTorrent, Sharewood, etc.)
+[COLOR green]Added[/COLOR]: Gearsscrapers compatibility and integration
+[COLOR green]Added[/COLOR]: local XML override support (xml/ directory) for testing remote category XMLs without modifying online sources
+[COLOR green]Added[/COLOR]: safe logging wrapper for binary data detection - prevents 73MB+ log file corruption from video content dumps
+[COLOR green]Added[/COLOR]: local adultresolver override with ResolveURL framework integration (65+ supported hosts)
+[COLOR green]Added[/COLOR]: manual extraction fallback patterns (4+ regex patterns) for adult content resolution
+[COLOR green]Added[/COLOR]: Kodi image cache clearing utility scripts (interactive and quick versions) for Windows
+[COLOR green]Added[/COLOR]: threading protection for Trakt token refresh using window properties to prevent race conditions
 
 [COLOR orange]Fixed[/COLOR]: trailers playing again
 [COLOR orange]Fixed[/COLOR]: major core code changes py2 to 3. Will [B]not[/B] work on a python 2 version
@@ -111,6 +85,20 @@
 [COLOR orange]Fixed[/COLOR]: Continue Watching for TV Shows showing wrong/missing episodes - fill_progress_table now fetches both movies AND episodes from Trakt
 [COLOR orange]Fixed[/COLOR]: episodes with <92% progress showing checkmark instead of resume arrow - overlay logic now checks progress table first
 [COLOR orange]Fixed[/COLOR]: AttributeError when adding movies/TV shows to library - corrected router to use libmovies, libtvshows, and libepisodes as classes instead of methods
+[COLOR orange]Fixed[/COLOR]: critical scraping bug - ValueError "not enough values to unpack (expected 3, got 2)" that caused 100% scraping failure
+[COLOR orange]Fixed[/COLOR]: source tuple priority stripping that broke all 44 scrapers
+[COLOR orange]Fixed[/COLOR]: IndentationError in episodes.py line 498 (_fetch_tmdb_data method)
+[COLOR orange]Fixed[/COLOR]: Dialog().ok() calls to use 2 arguments for Kodi Python 3 compatibility
+[COLOR orange]Fixed[/COLOR]: TypeError in debrid manager preventing feature from loading
+[COLOR orange]Fixed[/COLOR]: debrid account detection - improved resolver instantiation and auth token retrieval
+[COLOR orange]Fixed[/COLOR]: UTF-8 special character encoding issues (removed checkmarks and arrows)
+[COLOR orange]Fixed[/COLOR]: debrid manager now properly checks for multiple auth token setting names
+[COLOR orange]Fixed[/COLOR]: Trakt reauth flow - added error handling for failed token refresh and user notification
+[COLOR orange]Fixed[/COLOR]: Trakt token refresh logic - now checks for <1 hour remaining before attempting refresh to prevent unnecessary API calls
+[COLOR orange]Fixed[/COLOR]: Trakt 401 error handling - token_refresh now returns boolean success status to prevent infinite retry loops
+[COLOR orange]Fixed[/COLOR]: Trakt race condition - concurrent token refreshes from multiple threads causing 400 errors and failed authentication
+[COLOR orange]Fixed[/COLOR]: Trakt token refresh now uses window property locking to ensure only one thread refreshes at a time (prevents OAuth2 single-use token conflicts)
+[COLOR orange]Fixed[/COLOR]: Progress view and frontpage widget showing empty results after Kodi restart due to failed token refresh
 
 [COLOR cyan]Changed[/COLOR]: several (missing) language strings
 [COLOR cyan]Changed[/COLOR]: trailers: 1 result plays automatically, multiple results can be selected by the user from a dialog
@@ -127,13 +115,27 @@
 [COLOR cyan]Changed[/COLOR]: cache table schema migrated: legacy `table` column values are copied to new `namespace` column; schema_migrations records `cache_v2` idempotently
 [COLOR cyan]Changed[/COLOR]: scrapers and pack implementations updated and documented (CocoScrapers / PACK docs) with tests for pack behavior and caching integration
 [COLOR cyan]Changed[/COLOR]: Trakt scrobbling now queues events and processes in 5-minute batches instead of immediate API calls
+[COLOR cyan]Changed[/COLOR]: superinfo caching optimized for 50-70% faster metadata retrieval
+[COLOR cyan]Changed[/COLOR]: BGDialog source update frequency reduced by 83% (updates every 6th source instead of every source)
+[COLOR cyan]Changed[/COLOR]: library season tracking improved to prevent duplicate episodes
+[COLOR cyan]Changed[/COLOR]: list rendering order corrected (alphabetical → chronological where appropriate)
+[COLOR cyan]Changed[/COLOR]: debrid manager uses select() dialogs instead of textviewer() for better navigation
+[COLOR cyan]Changed[/COLOR]: color scheme standardized across addon (green=safe, yellow=warn, red=danger, skyblue=names)
+[COLOR cyan]Changed[/COLOR]: back button uses << instead of UTF-8 arrow character
 
-[COLOR orchid]Extra[/COLOR]: Bumped version to 2.1.0/module to 2.2.0
-[COLOR orchid]Extra[/COLOR]: created comprehensive documentation (API_MODERNIZATION_SUMMARY.md, COCOSCRAPERS_INTEGRATION.md, PACK_IMPLEMENTATION_COMPLETE.md, SCROBBLE_QUEUE_IMPLEMENTATION.md)
+[COLOR orchid]Extra[/COLOR]: Bumped version to 2.2.0-alpha
+[COLOR orchid]Extra[/COLOR]: Alpha repository created and deployed to GitHub (thecrew-alpha-repo)
+[COLOR orchid]Extra[/COLOR]: Repository generator tool (build_repo.py) for automated packaging
+[COLOR orchid]Extra[/COLOR]: Created comprehensive documentation (API_MODERNIZATION_SUMMARY.md, COCOSCRAPERS_INTEGRATION.md, PACK_IMPLEMENTATION_COMPLETE.md, SCROBBLE_QUEUE_IMPLEMENTATION.md, CACHE_ETAG.md, MIGRATIONS.md)
+[COLOR orchid]Extra[/COLOR]: Added tools/check_cache_db.py for cache database inspection
+[COLOR orchid]Extra[/COLOR]: Added tools/clear_kodi_image_cache.ps1 for Windows thumbnail cache management
 
-[COLOR red]Removed[/COLOR]: a lot of startup code
-[COLOR red]Removed[/COLOR]: a lot of obsolete
-[COLOR red]Removed[/COLOR]: removed Kodi-six
-[COLOR red]Removed[/COLOR]: removed support for Furk.net
-[COLOR red]Removed[/COLOR]: removed eval() from cache system (security risk)
-[COLOR red]Removed[/COLOR]: removed redundant TMDb external_ids API calls (now included via append_to_response)
+[COLOR red]Removed[/COLOR]: 51 backup files and .bak files from codebase (alpha cleanup phase)
+[COLOR red]Removed[/COLOR]: test compatibility code that was breaking production scraping
+[COLOR red]Removed[/COLOR]: UTF-8 special characters (●, ←) that displayed incorrectly in Kodi
+[COLOR red]Removed[/COLOR]: all startup code bloat for cleaner initialization
+[COLOR red]Removed[/COLOR]: obsolete Python 2 compatibility layers
+[COLOR red]Removed[/COLOR]: Kodi-six dependency
+[COLOR red]Removed[/COLOR]: support for Furk.net
+[COLOR red]Removed[/COLOR]: eval() from cache system (security risk)
+[COLOR red]Removed[/COLOR]: redundant TMDb external_ids API calls (now included via append_to_response)
