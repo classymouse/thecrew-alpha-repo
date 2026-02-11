@@ -1,0 +1,15 @@
+# Visual Studio
+.vs/
+
+# Build artifacts
+temp_repo_build/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# OS
+.DS_Store
+Thumbs.db
