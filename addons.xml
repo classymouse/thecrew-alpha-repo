@@ -72,7 +72,7 @@
       </assets>
     </extension>
   </addon>
-  <addon id="repository.thecrew.alpha" name="The Crew Alpha Repository" version="1.0.4" provider-name="The Crew">
+  <addon id="repository.thecrew.alpha" name="The Crew Alpha Repository" version="1.0.5" provider-name="The Crew">
     <extension point="xbmc.addon.repository" name="The Crew Alpha Repository">
       <dir>
         <info compressed="false">https://classymouse.github.io/addons.xml</info>
@@ -83,11 +83,6 @@
         <info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
         <checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
-      </dir>
-      <dir>
-        <info compressed="false">https://raw.githubusercontent.com/unhingedthemes/zips/main/_zips/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/unhingedthemes/zips/main/_zips/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/unhingedthemes/zips/main/_zips/</datadir>
       </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -102,7 +97,7 @@
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
       </assets>
-      <news>v1.0.4 (Feb 2026) - Removed production repository from alpha site, now serves only alpha addons[CR]v1.0.3 (Feb 2026) - Added Gujal00 and UnhingedThemes repositories for dependency resolution[CR]v1.0.2 (Feb 2026) - Migrated to GitHub Pages hosting at classymouse.github.io</news>
+      <news>v1.0.5 (Feb 2026) - Removed unhingedthemes repository - now shows ONLY The Crew alpha addons + ResolveURL dependencies[CR]v1.0.4 (Feb 2026) - Removed production repository from alpha site[CR]v1.0.3 (Feb 2026) - Added dependency repositories</news>
     </extension>
   </addon>
 </addons>
