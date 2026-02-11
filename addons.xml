@@ -1,13 +1,30 @@
 <?xml version='1.0' encoding='utf-8'?>
 <addons>
-  <addon id="plugin.video.thecrew" version="2.2.0-alpha" name="[COLOR orchid]THE CREW[/COLOR]" provider-name="The Crew">
+  <addon id="script.module.thecrew" name="[COLOR orchid]THE CREW MODULE[/COLOR]" version="2.2.0" provider-name="The Crew">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.beautifulsoup4" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">The Crew is a team of individuals that does what it can to provide others, you, the best in entertainment.</summary>
+      <description lang="en">Many come, Many go. The true and dedicated are here.</description>
+      <platform>all</platform>
+      <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+      <disclaimer lang="en">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="plugin.video.thecrew" version="2.1.0" name="[COLOR orchid]THE CREW[/COLOR]" provider-name="The Crew">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="script.module.thecrew" />
       <import addon="script.thecrew.artwork" />
       <import addon="script.module.requests" />
       <import addon="script.module.resolveurl" />
-      <import addon="script.module.resolveurl.xxx" version="2.0.1" />
       <import addon="script.module.simplejson" />
       <import addon="script.module.requests" />
       <import addon="script.module.beautifulsoup4" />
@@ -32,26 +49,6 @@
         <screenshot>resources/art/ss/1.png</screenshot>
         <screenshot>resources/art/ss/2.png</screenshot>
         <screenshot>resources/art/ss/3.png</screenshot>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="script.module.thecrew" name="[COLOR orchid]THE CREW MODULE[/COLOR]" version="2.3.0-alpha" provider-name="The Crew">
-    <requires>
-      <import addon="xbmc.python" version="3.0.0" />
-      <import addon="script.module.beautifulsoup4" />
-      <import addon="script.module.resolveurl" />
-      <import addon="script.module.resolveurl.xxx" version="2.0.1" />
-    </requires>
-    <extension point="xbmc.python.module" library="lib" />
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">The Crew is a team of individuals that does what it can to provide others, you, the best in entertainment.</summary>
-      <description lang="en">Many come, Many go. The true and dedicated are here.</description>
-      <platform>all</platform>
-      <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-      <disclaimer lang="en">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
       </assets>
     </extension>
   </addon>
@@ -97,7 +94,7 @@
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
       </assets>
-      <news>v1.0.5 (Feb 2026) - Removed unhingedthemes repository - now shows ONLY The Crew alpha addons + ResolveURL dependencies[CR]v1.0.4 (Feb 2026) - Removed production repository from alpha site[CR]v1.0.3 (Feb 2026) - Added dependency repositories</news>
+      <news>v1.0.5 (Feb 2026) - Removed unhingedthemes repository - now shows ONLY The Crew alpha addons + ResolveURL dependencies[CR]v1.0.4 (Feb 2026) - Removed production repository from alpha site[CR]v1.0.3 (Feb 2026) - Added dependency repositories[CR]v1.0.1 (Feb 2026) - Fixed repository URLs, rebuilt with all alpha fixes</news>
     </extension>
   </addon>
 </addons>
