@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <addons>
-  <addon id="plugin.video.thecrew" version="2.2.1-alpha" name="[COLOR orchid]THE CREW[/COLOR]" provider-name="The Crew">
+  <addon id="plugin.video.thecrew" version="2.2.2-alpha" name="[COLOR orchid]THE CREW[/COLOR]" provider-name="The Crew">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="script.module.thecrew" />
@@ -93,7 +93,7 @@
     </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">The Crew Alpha Testing Repository</summary>
-      <description lang="en">Alpha testing repository for The Crew addons. Contains pre-release versions with latest features and fixes. For testing purposes only.[CR][CR]Version 2.2.0-alpha includes:[CR]• 50-70% faster episode browsing (show caching)[CR]• 13 new Viperscrapers torrent sources[CR]• Library auto-updates for new seasons[CR]• Optimized scraping UI (83% fewer updates)[CR]• Metadata rendering fixes[CR]• IndentationError fix</description>
+      <description lang="en">Alpha testing repository for The Crew addons. Contains pre-release versions with latest features and fixes. For testing purposes only.[CR][CR]Version 2.3.0-alpha includes:[CR]• Complete adult section integration with Python classes[CR]• 8 working adult sites with pagination and categories[CR]• WhoresHub enhanced with 84 categories and video counts[CR]• Enhanced FreeOMovie with service detection[CR]• Added resolveurl.xxx dependency support[CR]• Improved video playback reliability</description>
       <disclaimer lang="en">This repository contains ALPHA software. Use at your own risk. Backup your Kodi databases before installing.</disclaimer>
       <platform>all</platform>
       <license>GNU GENERAL PUBLIC LICENSE Version 3</license>
@@ -103,10 +103,10 @@
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
       </assets>
-      <news>v1.0.5 (Feb 2026) - Removed unhingedthemes repository - now shows ONLY The Crew alpha addons + ResolveURL dependencies[CR]v1.0.4 (Feb 2026) - Removed production repository from alpha site[CR]v1.0.3 (Feb 2026) - Added dependency repositories[CR]v1.0.1 (Feb 2026) - Fixed repository URLs, rebuilt with all alpha fixes</news>
+      <news>v1.0.5 (Feb 2026) - Removed unhingedthemes repository - now shows ONLY The Crew alpha addons + ResolveURL dependencies[CR]v1.0.4 (Feb 2026) - Removed production repository from alpha site[CR]v1.0.3 (Feb 2026) - Added dependency repositories</news>
     </extension>
   </addon>
-  <addon id="script.module.thecrew" name="[COLOR orchid]THE CREW MODULE[/COLOR]" version="2.3.0-alpha" provider-name="The Crew">
+  <addon id="script.module.thecrew" name="[COLOR orchid]THE CREW MODULE[/COLOR]" version="2.3.1-alpha" provider-name="The Crew">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="script.module.beautifulsoup4" />

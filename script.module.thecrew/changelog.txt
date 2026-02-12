@@ -1,3 +1,24 @@
+[COLOR orchid][B]version 2.3.1-alpha[/B][/COLOR]
+
+[COLOR teal]Info[/COLOR]: This is a maintenance release focused on library auto-update improvements and repository organization.
+
+[COLOR green]Added[/COLOR]: user notification when new TV show seasons are detected by library auto-update
+[COLOR green]Added[/COLOR]: comprehensive library auto-update documentation (docs/LIBRARY_AUTO_UPDATE.md)
+[COLOR green]Added[/COLOR]: repository build automation tools (build_repo.py and build_repo_zip.py)
+[COLOR green]Added[/COLOR]: repository/ folder to .gitignore to prevent build artifacts in version control
+[COLOR green]Added[/COLOR]: organized documentation structure - all docs moved to docs/ folder
+[COLOR green]Added[/COLOR]: organized testing structure - all tests moved to tests/ folder
+[COLOR green]Added[/COLOR]: organized development tools - all scripts moved to tools/ folder
+
+[COLOR orange]Fixed[/COLOR]: library auto-update now checks for new seasons every 3 days (reduced from 7 days) for faster new season detection
+[COLOR orange]Fixed[/COLOR]: library service now properly detects and adds new seasons to continuing shows
+[COLOR orange]Fixed[/COLOR]: episode caching improvements for better performance
+
+[COLOR cyan]Changed[/COLOR]: repository structure reorganized for better maintainability
+[COLOR cyan]Changed[/COLOR]: .gitignore updated to prevent temporary development files in root directory
+
+[COLOR red]Removed[/COLOR]: unhinged scraper (caused repository errors)
+
 [COLOR orchid][B]version 2.2.0-alpha[/B][/COLOR]
 
 [COLOR teal]Info[/COLOR]: This is a [B]major alpha release[/B] representing a nearly complete rewrite with extensive improvements to scraping, caching, debrid management, and Trakt integration. All critical bugs have been resolved and the addon is ready for community testing.
