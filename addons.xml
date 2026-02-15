@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <addons>
-  <addon id="plugin.video.thecrew" version="2.2.2-alpha" name="[COLOR orchid]THE CREW[/COLOR]" provider-name="The Crew">
+  <addon id="plugin.video.thecrew" version="2.2.3-alpha" name="[COLOR orchid]THE CREW[/COLOR]" provider-name="The Crew">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="script.module.thecrew" />
@@ -126,7 +126,7 @@
       </assets>
     </extension>
   </addon>
-  <addon id="script.thecrew.artwork" version="2.1.0" name="[COLOR orchid]THE CREW ARTWORK[/COLOR]" provider-name="The Crew">
+  <addon id="script.thecrew.artwork" version="2.1.1" name="[COLOR orchid]THE CREW ARTWORK[/COLOR]" provider-name="The Crew">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
     </requires>
