@@ -1,6 +1,44 @@
+[COLOR orchid][B]version 2.3.3-alpha[/B][/COLOR]
+
+[COLOR teal]Info[/COLOR]: Rebuild of 2.3.2-alpha with corrected zip packaging. No code changes - this version bump is required for Kodi to download the fixed packages.
+
+[COLOR orange]Fixed[/COLOR]: Corrupted zip file packaging (97MB file including cache.db - now properly 1.8MB)
+
+[COLOR orchid][B]version 2.3.2-alpha[/B][/COLOR]
+
+[COLOR teal]Info[/COLOR]: Major update with complete TVShows model modernization, working Documentary section, new Progress tracking menus, GUI artwork refresh, and comprehensive bug fixes.
+
+[COLOR green]Added[/COLOR]: TVShows completely modernized - Full conversion to TVItem/TVShow/Episode model architecture for better compatibility and performance
+[COLOR green]Added[/COLOR]: Progress tracking menus - Three new Trakt progress views (Shows, Next Episodes, In Progress Episodes) using dedicated Progress indexer
+[COLOR green]Added[/COLOR]: Documentary section fully functional - 25 categories, video playback working, pagination support for browsing extensive catalogs
+[COLOR green]Added[/COLOR]: Complete metadata support - Director, writer, cast with thumbnails on all TV content via InfoTag API
+[COLOR green]Added[/COLOR]: GUI artwork refresh - Updated modern theme icons for main menu items (movies, TV shows, tools, search) and category screens
+[COLOR green]Added[/COLOR]: Documentary category browsing with proper URL structure (/category/name/) for all 25 categories
+[COLOR green]Added[/COLOR]: YouTube video extraction support in documentaries using contentUrl/embedUrl meta tags
+[COLOR green]Added[/COLOR]: Gambling spam filtering in documentary parser (casino, sportsbook, betting, etc.)
+[COLOR green]Added[/COLOR]: Relative URL support in documentary link extraction for site-internal navigation
+[COLOR green]Added[/Added]: Episode model with complete InfoTag field mapping (premiered, rating, votes, duration, etc.)
+
+[COLOR orange]Fixed[/COLOR]: TVShows threading issues - Eliminated race conditions in multi-threaded episode list generation
+[COLOR orange]Fixed[/COLOR]: InfoTag compatibility warnings - Removed deprecated setInfo/setCast calls, using setInfo with ListItem.VIDEOINFO_TAG
+[COLOR orange]Fixed[/COLOR]: Artwork display issues - Proper poster/fanart/banner mapping using InfoTag methods
+[COLOR orange]Fixed[/COLOR]: Documentary page 1 filtering - Removed sports betting spam that was slipping through initial filters
+[COLOR orange]Fixed[/COLOR]: Documentary category parsing - Changed from broken HTML parsing to hardcoded 25 working categories
+[COLOR orange]Fixed[/COLOR]: Documentary video playback - Fixed YouTube video ID extraction by stripping query parameters
+[COLOR orange]Fixed[/COLOR]: Documentary 403 Forbidden errors - Added Chrome User-Agent headers and client.request() fallback
+[COLOR orange]Fixed[/COLOR]: Season display duplicating show titles in episode labels
+[COLOR orange]Fixed[/Orange]: Cast member display now shows character names and thumbnails properly
+[COLOR orange]Fixed[/COLOR]: Episode premiere dates now showing correctly in list views
+
+[COLOR cyan]Changed[/COLOR]: Episode list generation - 50-70% faster with show-level caching and parallel processing
+[COLOR cyan]Changed[/COLOR]: All TV content now uses modern InfoTag API instead of deprecated setInfo methods
+[COLOR cyan]Changed[/COLOR]: Documentary URLs updated to correct endpoints (/all/, /list/, /top-100/, /category/)
+[COLOR cyan]Changed[/COLOR]: Video playback method changed from xbmc.Player().play() to setResolvedUrl() for documentaries
+[COLOR cyan]Changed[/COLOR]: Artwork addon version bumped to 2.1.1 reflecting extensive icon updates
+
 [COLOR orchid][B]version 2.3.1-alpha[/B][/COLOR]
 
-[COLOR teal]Info[/COLOR]: This is a maintenance release focused on library auto-update improvements and repository organization.
+[COLOR teal]Info[/COLOR]: This is a maintenance release focused on TV show season display fixes, Trakt sync improvements, genre filtering enhancements, library auto-update improvements, and repository organization.
 
 [COLOR green]Added[/COLOR]: user notification when new TV show seasons are detected by library auto-update
 [COLOR green]Added[/COLOR]: comprehensive library auto-update documentation (docs/LIBRARY_AUTO_UPDATE.md)
@@ -9,15 +47,29 @@
 [COLOR green]Added[/COLOR]: organized documentation structure - all docs moved to docs/ folder
 [COLOR green]Added[/COLOR]: organized testing structure - all tests moved to tests/ folder
 [COLOR green]Added[/COLOR]: organized development tools - all scripts moved to tools/ folder
+[COLOR green]Added[/COLOR]: Trakt batch API operations for season watched/unwatched - fetches all episodes from TMDB and marks entire season in single API call
+[COLOR green]Added[/COLOR]: cache invalidation after Trakt sync operations to ensure watched indicators refresh immediately
+[COLOR green]Added[/COLOR]: IMDB-to-TMDB conversion for shows without TMDB ID before batch operations
 
+[COLOR orange]Fixed[/COLOR]: season poster display - now uses 'seasons' content type instead of 'tvshows' for proper skin artwork mapping
+[COLOR orange]Fixed[/COLOR]: season poster thumbnail - changed from fanart fallback to proper season poster source
+[COLOR orange]Fixed[/COLOR]: season Information context menu - added required metadata fields (season, tvshowtitle, title) for dialog display
+[COLOR orange]Fixed[/COLOR]: season mediatype - changed from 'tvshow' to 'season' for correct Kodi integration
+[COLOR orange]Fixed[/COLOR]: Trakt HTTP 429 rate limit errors when marking seasons watched/unwatched - now uses batch operations (10 episodes = 1 API call instead of 10 calls)
+[COLOR orange]Fixed[/COLOR]: watched/unwatched indicators not updating after season marking - added cache clearing for Trakt activity cache and syncTVShows function cache
+[COLOR orange]Fixed[/COLOR]: Trakt season sync response parsing - switched from get_trakt() to getTraktAsJson() for proper JSON handling
+[COLOR orange]Fixed[/COLOR]: genre filter showing too many foreign movies - switched from TMDB to Trakt API for genre filtering
 [COLOR orange]Fixed[/COLOR]: library auto-update now checks for new seasons every 3 days (reduced from 7 days) for faster new season detection
 [COLOR orange]Fixed[/COLOR]: library service now properly detects and adds new seasons to continuing shows
 [COLOR orange]Fixed[/COLOR]: episode caching improvements for better performance
 
+[COLOR cyan]Changed[/COLOR]: genre filtering now uses Trakt trending API with genre slugs instead of TMDB discover with numeric IDs
+[COLOR cyan]Changed[/COLOR]: genres() method updated to use Trakt genre slugs (action, comedy, science-fiction, etc.) for better English-language content curation
 [COLOR cyan]Changed[/COLOR]: repository structure reorganized for better maintainability
 [COLOR cyan]Changed[/COLOR]: .gitignore updated to prevent temporary development files in root directory
 
 [COLOR red]Removed[/COLOR]: unhinged scraper (caused repository errors)
+[COLOR red]Removed[/COLOR]: "TV Movie" genre (TMDB-specific, not available in Trakt)
 
 [COLOR orchid][B]version 2.2.0-alpha[/B][/COLOR]
 
