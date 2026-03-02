@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <addons>
-  <addon id="plugin.video.thecrew" version="2.2.7-alpha" name="[COLOR orchid]THE CREW[/COLOR]" provider-name="The Crew">
+  <addon id="plugin.video.thecrew" version="2.2.8-alpha" name="[COLOR orchid]THE CREW[/COLOR]" provider-name="The Crew">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="script.module.thecrew" />
@@ -78,7 +78,7 @@
       </assets>
     </extension>
   </addon>
-  <addon id="repository.thecrew.alpha" name="The Crew Alpha Repository" version="1.0.7" provider-name="The Crew">
+  <addon id="repository.thecrew.alpha" name="The Crew Alpha Repository" version="1.0.8" provider-name="The Crew">
     <extension point="xbmc.addon.repository" name="The Crew Alpha Repository">
       <dir>
         <info compressed="false">https://classymouse.github.io/addons.xml</info>
@@ -93,7 +93,7 @@
     </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">The Crew Alpha Testing Repository</summary>
-      <description lang="en">Alpha testing repository for The Crew addons. Contains pre-release versions with latest features and fixes. For testing purposes only.[CR][CR]Version 2.3.7-alpha/2.2.7-alpha includes:[CR]• New Kids Section with family-friendly content (Disney, Pixar, Barbie)[CR]• TMDB-powered kids movies and TV shows with G/PG/TV-Y ratings[CR]• Eye-catching startup version announcement dialogs[CR]• Comprehensive startup maintenance and health checks[CR]• Enhanced Trakt integration with configurable sync intervals[CR]• Complete adult section with 8+ working providers[CR]• Improved cache management with ETag support</description>
+      <description lang="en">Alpha testing repository for The Crew addons. Contains pre-release versions with latest features and fixes. For testing purposes only.[CR][CR]Version 2.2.8-alpha / 2.3.7-alpha includes:[CR]• New Kids Section with family-friendly content filtering (G/PG movies, TV-Y/TV-G shows)[CR]• TMDB Discover API integration for curated children's content[CR]• Fixed critical service startup bug - version announcements now working[CR]• Service.py main() now executes properly on Kodi startup[CR]• Startup maintenance and provider updates restored[CR]• Improved Trakt sync scheduling with user-configurable intervals</description>
       <disclaimer lang="en">This repository contains ALPHA software. Use at your own risk. Backup your Kodi databases before installing.</disclaimer>
       <platform>all</platform>
       <license>GNU GENERAL PUBLIC LICENSE Version 3</license>
@@ -103,7 +103,7 @@
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
       </assets>
-      <news>v1.0.5 (Feb 2026) - Removed unhingedthemes repository - now shows ONLY The Crew alpha addons + ResolveURL dependencies[CR]v1.0.4 (Feb 2026) - Removed production repository from alpha site[CR]v1.0.3 (Feb 2026) - Added dependency repositories</news>
+      <news>v1.0.8 (Mar 2026) - Kids section added, critical service.py startup fix, updated descriptions[CR]v1.0.7 (Mar 2026) - Repository package optimization, development files excluded[CR]v1.0.5 (Feb 2026) - Removed unhingedthemes repository[CR]v1.0.4 (Feb 2026) - Removed production repository from alpha site</news>
     </extension>
   </addon>
   <addon id="script.module.thecrew" name="[COLOR orchid]THE CREW MODULE[/COLOR]" version="2.3.7-alpha" provider-name="The Crew">
